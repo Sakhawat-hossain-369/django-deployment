@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+{% extends 'login_app/base.html' %}
+{% load static %}
+{% block body_block %}
+<title>{{title}}</title>
+{% if user.is_authenticated %}
+<p><h2>Hi {{ user_basic_info.username }}</h2></p>
+<p> <h3>Your gmail: {{ user_basic_info.email }} </h3></p>
+<a href="{{ user_more_info.facebook_id }}"><h4>Facebook Id: {{user_more_info.facebook_id}}</h4></a>
+<br>
+<div class="profile-container">
+{% if user_more_info.profile_pic %}
+    <img src="{{ user_more_info.profile_pic.url }}" alt="Profile Picture" class="profile-pic">
+{% else %}
+    <p>No profile picture available</p>
+{% endif %}
+</div>
+
+
+{% else %}
+<div class="alert alert-primary"> You are not loged in </div>
+{% endif %}
+<br>
+
+
+{% endblock body_block %}

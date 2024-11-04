@@ -1,0 +1,11 @@
+.profile-pic-container {
+    text-align: center; /* Center the image */
+    margin-top: 20px; /* Optional: add margin to space out the section */
+}
+
+.profile-pic {
+    max-width: 150px; /* Adjust the width of the image */
+    max-height: 150px; /* Adjust the height to maintain aspect ratio */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensure the image fits the container without distortion */
+}
